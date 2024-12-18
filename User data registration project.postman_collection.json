@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "4e982f94-8f67-41b3-bce6-3a48728d48da",
+		"name": "User data registration project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38293655"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"asha7729@gmail.com\",\r\n  \"firstName\": \"Asha\",\r\n  \"lastName\": \"Akter\",\r\n  \"NIDNumber\": \"1234567890123\",\r\n  \"phoneNumber\": \"017*****1\",\r\n  \"bloodGroup\": \"A+\",\r\n  \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/Registration",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"Registration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n      \"email\": \"ansha7729@gmail.com\",\r\n      \"password\": \"123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/Login",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getUserProfile",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"_id\": \"6760285198cc352297029768\",\r\n  \"email\":\"ansha7729@gmail.com\",\r\n  \"firstName\": \"Asha\",\r\n  \"lastName\": \"Akter\",\r\n  \"NIDNumber\": \"1234567890123\",\r\n  \"phoneNumber\": \"017*******\",\r\n  \"bloodGroup\": \"A+\",\r\n  \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/getUserProfile/6761a3c1d2e711c657168a12",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"getUserProfile",
+						"6761a3c1d2e711c657168a12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllUsers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/getAllUsers",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"getAllUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateUserProfile",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"firstName\": \"Asha\",\r\n  \"lastName\": \"UpdatedAkter\",\r\n  \"phoneNumber\": \"01800000000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASEURL}}/updateUserProfile/6760300719b31785d5b8ce27",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"updateUserProfile",
+						"6760300719b31785d5b8ce27"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "token",
+						"value": "{{TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASEURL}}/deleteUser/6761a4c7d2e711c657168a1b",
+					"host": [
+						"{{BASEURL}}"
+					],
+					"path": [
+						"deleteUser",
+						"6761a4c7d2e711c657168a1b"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASEURL",
+			"value": "http://localhost:5050/api",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFuc2hhNzcyOUBnbWFpbC5jb20iLCJ1c2VyX2lkIjoiNjc2MDI4NTE5OGNjMzUyMjk3MDI5NzY4IiwiaWF0IjoxNzM0MzU1MTIyLCJleHAiOjE3MzY5NDcxMjJ9.BvPzyZ3-9wt_bdQm-MxFz-XVG45OfMDVFg2SBRLxp24",
+			"type": "string"
+		}
+	]
+}
